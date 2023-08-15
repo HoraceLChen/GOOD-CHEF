@@ -1,2 +1,11 @@
 <h1>Hello</h1>
 <p>Paragraph</p>
+
+<% @offers.each do |offer| %>
+<%= offer.title %>
+<%= offer.cuisine %>
+<%= offer.price_pp %>
+<%= link_to("see more", offer_path(offer)) %>
+<% end %>
+
+<%= link_to("Make new offer", new_offer_path) %>
