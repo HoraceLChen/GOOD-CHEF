@@ -4,3 +4,9 @@
 <%= @offer.description %>
 <%= link_to("Reserve", offer_booking_path(@offer)) %>
 <%= link_to("Back to Offers", offers_path) %>
+
+<%= simple_form_for([@offer, @booking]) do |f| %>
+  <%= f.input :date %>
+    <%= f.input :guests %>
+  <%= f.submit %>
+<% end %>
