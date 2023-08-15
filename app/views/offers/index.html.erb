@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="card" style="width: 15rem">
-    <div class="card-body">
+  <div class="card" style="width: 18rem">
+    <div class="card-body align-center">
       <% @offers.each do |offer| %>
         <%# <%= offer.image %>
         <h5 class="card-title"> <%= offer.title %> </h5>
@@ -11,5 +11,5 @@
     </div>
   </div>
 
-  <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary") %>
+  <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
 </div>
