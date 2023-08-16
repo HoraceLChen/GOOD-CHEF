@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
+  overflow: hidden;
 }
 
 // Smallest device
@@ -37,4 +38,19 @@
   .card {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+.offer-thumbnail {
+  width: 18rem;
+  height: 18rem;
+}
+
+.card-row {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  margin-top: var(--bs-gutter-y);
+}
+
+.in-line {
+  display: inline-block;
 }
