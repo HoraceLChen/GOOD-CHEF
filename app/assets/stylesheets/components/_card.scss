@@ -46,6 +46,8 @@
 
 .card-row {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
   max-width: 100%;
   margin-top: var(--bs-gutter-y);
@@ -53,4 +55,9 @@
 
 .in-line {
   display: inline-block;
+}
+
+.index-header {
+  display: flex;
+  align-items: center;
 }
