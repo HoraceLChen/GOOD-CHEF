@@ -17,7 +17,7 @@ user3 = User.create(email: "le_wagon@g.com", password: "le_wagon", first_name: "
   Booking.create(
     date: "2023.08.15",
     status: "pending",
-    offer_id: Offer.all.sample.id,
+    offer_id: Offer.all.sample,
     user_id: user3.id,
     guests: 10
   )
