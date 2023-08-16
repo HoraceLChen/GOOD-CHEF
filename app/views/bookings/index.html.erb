@@ -1,9 +1,18 @@
-<% @bookings.each do |booking| %>
-  <%= booking.date %>
-  <%= booking.offer.title %>
-  <%= booking.offer.cuisine %>
-  <%= booking.offer.description %>
-  <%= booking.status %>
-<% end %>
+<h2>Please review the following booking requests</h2>
 
-<p><%= link_to("Update booking", offers_path) %></p>
+
+  <% @bookings.each do |booking| %>
+    <div class="booking-bar">
+      <img src = 'https://www.escoffier.edu/wp-content/uploads/2016/02/Smiling-female-chef-with-white-hat-and-uniform-in-a-kitchen-e1611773135718.jpg' class="avatar-large"/>
+        <div class="booking-content">
+          <p><small><%= booking.date %></small></p>
+          <p class="title"><strong><%= booking.offer.title %></strong></p>
+          <p> &nbsp;&nbsp;- Cuisine : <%= booking.offer.cuisine %></p>
+          <p> &nbsp;&nbsp;- Desc. : <%= booking.offer.description %></p>
+          <p> &nbsp;&nbsp;- Status : <em><%= booking.status %></em></p>
+          <p class="update-link"><%= link_to("Update booking", offers_path)%></p>
+        </div>
+    </div>
+        <% end %>
+
+ <%# list.photo.attached? ? cl_image_path(list.photo.key) :  %>

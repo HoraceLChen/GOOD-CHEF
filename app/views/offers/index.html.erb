@@ -1,16 +1,22 @@
-<%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
-
-<%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
-<div class="container">
-  <div class="card" style="width: 18rem">
-    <div class="card-body align-center">
+<div class="page-body">
+    <div class="index-header cols-2 justify-content-between ">
+      <h2>Explore our Chefs!</h2>
+      <div class="user-actions">
+        <%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
+        <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
+      </div>
+  </div>
+<div class="card-row">
       <% @offers.each do |offer| %>
-        <%# <%= offer.image %>
+        <div class="card in-line shadow mt-5" style="width: 18rem">
+        <%= image_tag "#{offer.img}", class: "offer-thumbnail" %>
+        <div class="card-body align-center">
         <h5 class="card-title"> <%= offer.title %> </h5>
         <h6 class="card-subtitle mb-2 text-body-secondary"> <%= offer.cuisine %> </h6>
-        <p class="card-text"> <%= offer.price_pp %> </p>
+        <p class="card-text"> $ <%= offer.price_pp %> </p>
         <%= link_to("...read more", offer_path(offer), class: "btn btn-outline-secondary") %>
-      <% end %>
     </div>
   </div>
+      <% end %>
+</div>
 </div>

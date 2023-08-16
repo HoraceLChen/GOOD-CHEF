@@ -1,0 +1,16 @@
+.page-body {
+ margin-left: 15%;
+ margin-right: 15%;
+ padding-right: calc(var(--bs-gutter-x) * .5);
+ padding-left: calc(var(--bs-gutter-x) * .5)
+}
+
+.container {
+  padding: 0cm;
+}
+.user-actions {
+  justify-content: end;
+  align-content: center;
+  display: flex;
+  gap: 1rem;
+}
