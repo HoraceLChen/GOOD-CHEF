@@ -3,6 +3,8 @@
 // e.g. here are the ones you can override for the navbar https://getbootstrap.com/docs/5.2/components/navbar/#sass-variables
 // 2. These variables are defined with default value (see https://robots.thoughtbot.com/sass-default)
 // 3. You can override them below!
+@import "config/fonts";
+@import "config/colors";
 
 // General style
 $font-family-sans-serif: $body-font;
@@ -11,7 +13,7 @@ $body-bg:                $white;
 $font-size-base:         1rem;
 
 // Colors
-$body-color: $gray;
+$body-color: $black;
 $primary:    $blue;
 $success:    $green;
 $info:       $yellow;
@@ -24,3 +26,6 @@ $border-radius-lg: 5px;
 $border-radius-sm: 5px;
 
 // Override other variables below!
+// $form-inputs-addon-font-weight:         $input-font-weight;
+// $form-inputs-addon-border-color:        $input-border-color;
+$input-group-addon-color:               $input-color;
