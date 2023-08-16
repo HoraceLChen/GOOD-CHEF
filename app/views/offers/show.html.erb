@@ -1,11 +1,24 @@
-<%= @offer.title %>
-<%= @offer.cuisine %>
-<%= @offer.price_pp %>
-<%= @offer.description %>
-<%= link_to("Back to Offers", offers_path) %>
+<div class="page-body">
+  <div class="index-header cols-2 justify-content-between ">
+    <div class="user-actions">
+      <%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
+      <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
+    </div>
+  </div>
 
-<%= simple_form_for([@offer, @booking]) do |f| %>
-  <%= f.input :date %>
-    <%= f.input :guests %>
-  <%= f.submit %>
-<% end %>
+
+  <div class="container card-trip justify-content-between">
+    <% @offers.each do |offer| %>
+      <%= image_tag "#{offer.img}" %>
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= @offer.title %></h2>
+            <h6><%= @offer.cuisine %></h6>
+            <p><%= @offer.description %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= @offer.price_pp %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        </div>
+    <% end %>
+  </div>
+</div>

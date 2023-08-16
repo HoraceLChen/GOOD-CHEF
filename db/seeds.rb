@@ -13,6 +13,16 @@ user2 = User.create(email: "lewagon@g.com", password: "lewagon", first_name: "Ka
 user3 = User.create(email: "le_wagon@g.com", password: "le_wagon", first_name: "Horace", last_name: "Chen", role: "chef")
 # puts "One user was created"
 
+10.times do
+  Booking.create(
+    date: "2023.08.15",
+    status: "pending",
+    offer_id: Offer.all.sample.id,
+    user_id: user3.id,
+    guests: 10
+  )
+end
+
 # 10.times do
 #   Offer.create(
 #     title: Faker::Food.dish,
