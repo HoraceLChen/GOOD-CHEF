@@ -16,7 +16,7 @@ class OffersController < ApplicationController
     @offer = Offer.new(offer_params)
     @offer.user_id = current_user.id
     if @offer.save
-      redirect_to offer_path(@offer)
+      redirect_to offers_path(@offer)
     else
       render :new, status: :unprocessable_entity
     end

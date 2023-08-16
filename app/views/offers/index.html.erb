@@ -1,3 +1,6 @@
+<%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
+
+<%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
 <div class="container">
   <div class="card" style="width: 18rem">
     <div class="card-body align-center">
@@ -10,10 +13,4 @@
       <% end %>
     </div>
   </div>
-
-<%= link_to("Make new offer", new_offer_path) %>
-<%= link_to("See bookings", bookings_path) %>
-
-<%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
 </div>
-
