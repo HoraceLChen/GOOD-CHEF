@@ -1,4 +1,26 @@
-.btn-btn-danger {
-  --bs-btn-font-weight: 600;
-  --btn-link-color: white;
+.btn-danger {
+ color: ghostwhite;
+ font-weight: bolder;
+}
+
+.btn-danger:hover {
+  color: white;
+  background-color: #ff4759;
+  border-color: var(--bs-btn-hover-border-color);
+}
+
+.btn-success {
+  color: ghostwhite;
+  font-weight: bolder;
+}
+
+.btn-success:hover {
+  color: ghostwhite;
+  background-color: #0be1cc;
+  font-weight: bolder;
+}
+
+.btn-outline-success:hover {
+  color: ghostwhite;
+  font-weight: bolder;
 }

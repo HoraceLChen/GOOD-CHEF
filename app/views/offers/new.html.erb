@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container col-6 col-md-4">
   <%= simple_form_for @offer do |f| %>
-  <%= f.input :title, placeholder: 'Uncle Roger' %>
-  <%= f.input :cuisine, placeholder: 'Malaysian' %>
-  <%= f.input :price_pp, placeholder: '$99' %>
-  <%= f.input :description, placeholder: 'Fuiiyyyooooo' %>
-  <%= f.button :submit, class: 'btn btn-danger' %>
-<% end %>
+    <%= f.input :title, placeholder: 'Uncle Roger' %>
+    <%= f.input :cuisine, placeholder: 'Malaysian' %>
+    <%= f.input :price_pp, placeholder: '$99'%>
+    <%= f.input :description, placeholder: 'Fuiiyyyooooo' %>
+    <%= f.button :submit, class: 'btn btn-danger' %>
+  <% end %>
 </div>

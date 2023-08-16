@@ -1,9 +1,11 @@
-<% @bookings.each do |booking| %>
-  <%= booking.date %>
-  <%= booking.offer.title %>
-  <%= booking.offer.cuisine %>
-  <%= booking.offer.description %>
-  <%= booking.status %>
-<% end %>
+<div>
+  <% @bookings.each do |booking| %>
+    <%= booking.date %>
+    <%= booking.offer.title %>
+    <%= booking.offer.cuisine %>
+    <%= booking.offer.description %>
+    <%= booking.status %>
+  <% end %>
 
-<p><%= link_to("Update booking", offers_path) %></p>
+  <p><%= link_to("Update booking", offers_path) %></p>
+</div>

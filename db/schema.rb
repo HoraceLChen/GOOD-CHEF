@@ -18,12 +18,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_075900) do
     t.date "date"
     t.string "status"
     t.bigint "offer_id", null: false
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "guests"
     t.index ["offer_id"], name: "index_bookings_on_offer_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -31,10 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_075900) do
     t.integer "price_pp"
     t.text "description"
     t.string "title"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_offers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,6 +49,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_15_075900) do
   end
 
   add_foreign_key "bookings", "offers"
-  add_foreign_key "bookings", "users"
-  add_foreign_key "offers", "users"
 end
