@@ -21,8 +21,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_16_070202) do
     t.bigint "offer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "guests"
-    t.bigint "user_id", null: false
     t.index ["offer_id"], name: "index_bookings_on_offer_id"
   end
 
@@ -33,9 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_16_070202) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
-    t.string "img"
-    t.index ["user_id"], name: "index_offers_on_user_id"
 
   end
 
