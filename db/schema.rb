@@ -12,7 +12,6 @@
 
 
 ActiveRecord::Schema[7.0].define(version: 2023_08_16_070202) do
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,4 +56,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_16_070202) do
 
   add_foreign_key "bookings", "offers"
   add_foreign_key "bookings", "users"
+#   add_foreign_key "offers", "users"
+
 end
