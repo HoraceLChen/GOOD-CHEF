@@ -10,7 +10,6 @@ class BookingsController < ApplicationController
     @offer = Offer.find(params[:offer_id])
     @booking.user_id = current_user.id
     @booking.offer = @offer
-    raise
     if @booking.save
       redirect_to offer_path(@offer), notice: 'Booking was successfully created.'
     else
