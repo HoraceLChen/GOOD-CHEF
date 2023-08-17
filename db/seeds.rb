@@ -5,12 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# Offer.destroy_all
-# User.destroy_all
-# Booking.destroy_all
+Offer.destroy_all
+User.destroy_all
+Booking.destroy_all
 
 user2 = User.create(email: "lewagon@g.com", password: "lewagon", first_name: "Kai", last_name: "Kawano", role: "user")
 user3 = User.create(email: "le_wagon@g.com", password: "le_wagon", first_name: "Horace", last_name: "Chen", role: "chef")
+p user2
+p user3
 # puts "One user was created"
 
 10.times do

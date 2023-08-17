@@ -3,45 +3,46 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   overflow: hidden;
-}
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .card {
+  // Media queries to adjust grid columns based on viewport width
+  @media (max-width: 575px) {
     grid-template-columns: 1fr;
   }
-}
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .card {
+  @media (min-width: 576px) and (max-width: 767px) {
     grid-template-columns: 1fr;
   }
-}
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .card {
-    grid-template-columns: 1fr 1fr;
+  @media (min-width: 768px) and (max-width: 991px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .card {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .card {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 .offer-thumbnail {
   width: 18rem;
   height: 18rem;
+  transition: filter 0.3s; // Smooth transition for blur effect
+  position: relative;
+
+  &.active {
+    filter: blur(3px); // Apply a blur filter
+
+    &::before {
+      content: "";
+      background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.8));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;  // Ensure it doesn't interfere with clicks
+      z-index: 1;  // Ensure it's on top of the card's content
+    }
+  }
 }
 
 .card-row {
