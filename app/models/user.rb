@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
   has_many :offers, dependent: :destroy
+  has_many :bookings_as_chef, through: :offers, source: :bookings
 end

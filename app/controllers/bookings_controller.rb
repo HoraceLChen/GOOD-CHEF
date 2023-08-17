@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
-
+  before_action :set_booking, only: [:update]
 
   def index
     @bookings = current_user.bookings
+    #manual way would be to join the tables and sql query condition: all where offer.userid = current_user.id
+    @bookings_as_chef = current_user.bookings_as_chef
   end
 
   def create
@@ -17,9 +19,21 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    if @booking.update(booking_params)
+      redirect_to bookings_path
+    else
+      render :index, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :offer_id, :date, :guests)
+    params.require(:booking).permit(:user_id, :offer_id, :date, :guests, :status)
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 end

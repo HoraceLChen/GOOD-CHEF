@@ -8,8 +8,7 @@
 
 
   <div class="container card-trip justify-content-between">
-    <% @offers.each do |offer| %>
-      <%= image_tag "#{offer.img}" %>
+      <%= image_tag "#{@offer.img}" %>
         <div class="card-trip-infos">
           <div>
             <h2><%= @offer.title %></h2>
@@ -19,6 +18,11 @@
           <h2 class="card-trip-pricing"><%= @offer.price_pp %></h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
         </div>
-    <% end %>
   </div>
+    <%= simple_form_for([@offer, @booking]) do |f| %>
+    <%= f.input :date %>
+      <%= f.input :guests %>
+    <%= f.submit %>
+  <% end %>
+
 </div>
