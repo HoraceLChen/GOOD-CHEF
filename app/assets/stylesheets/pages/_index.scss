@@ -8,17 +8,14 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 8px 16px;
-  margin-left: 30px;
-  margin-right: 30px;
   border: 1px solid rgb(235,235,235);
 }
 
 .booking-bar .booking-content {
-  flex-grow: 1;
+  flex-grow: .7;
   padding: 0 24px;
 }
 .avatar-large {
-  height: 100%;
   width: 120px;
   object-fit: cover;
 }
@@ -66,4 +63,8 @@
 
 .booking-bar .booking-bar-actions a:hover {
   color: #555555;
+}
+
+.booking-status {
+  flex-grow: .3;
 }
