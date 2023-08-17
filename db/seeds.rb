@@ -53,6 +53,7 @@ Offer.create(
   title: "A Taste of Melbourne",
   price_pp: rand(50..300),
   cuisine: "Australian, British",
+  address: "Richmond, Victoria",
   description: "Join Chef Liam for a one-of-a-kind Culinary Journey",
   img: "australian.jpg",
   user_id: user3.id
@@ -61,6 +62,7 @@ Offer.create(
   title: "Spices & Stories",
   price_pp: rand(50..300),
   cuisine: "Indian",
+  address: "St Kilda Road, Melbourne",
   description: "An Evening with Chef Ava",
   img: "/assets/indian.jpg",
   user_id: user3.id
@@ -69,6 +71,7 @@ Offer.create(
   title: "Flavors of the Sea",
   price_pp: rand(50..300),
   cuisine: "Seafood",
+  address: "Prahran, Melbourne",
   description: "Seafood Sensations by Chef Finn",
   img: "/assets/seafood.jpg",
   user_id: user3.id
@@ -77,6 +80,7 @@ Offer.create(
   title: "Garden-to-Table Magic",
   price_pp: rand(50..300),
   cuisine: "Greek",
+  address: "Heidelberg, Victoria",
   description: "Chef Lily's Fresh and Flavorful Cuisine",
   img: "/assets/greek.jpg",
   user_id: user3.id
@@ -85,6 +89,7 @@ Offer.create(
   title: "Umami Unveiled",
   price_pp: rand(50..300),
   cuisine: "Japanese",
+  address: "Toorak, Victoria",
   description: "Chef Mei Ling's Asian Fusion Alchemy",
   img: "/assets/japanese.jpg",
   user_id: user3.id
@@ -93,6 +98,7 @@ Offer.create(
   title: "Tableside Tales",
   price_pp: rand(50..300),
   cuisine: "French",
+  address: "Parkville, Victoria",
   description: "Chef Matilda's Culinary Chronicles and Conversations",
   img: "/assets/french.jpg",
   user_id: user3.id
@@ -101,6 +107,7 @@ Offer.create(
   title: "Leo's Gastronomic Safari",
   price_pp: rand(50..300),
   cuisine: "Middle Eastern",
+  address: "Bundoora, Victoria",
   description: "Exploring Cuisines Beyond Borders",
   img: "/assets/middle_eastern.jpg",
   user_id: user3.id
@@ -109,7 +116,10 @@ Offer.create(
   title: "Malaysian Spice Odyssey",
   price_pp: rand(50..300),
   cuisine: "Malaysian",
+  address: "Preston, Victoria",
   description: "Chef Amir's Journey Through Exquisite Flavors",
   img: "/assets/malaysian.jpg",
   user_id: user3.id
 )
+
+puts "8 offers where created"

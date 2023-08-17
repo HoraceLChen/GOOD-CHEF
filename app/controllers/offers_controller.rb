@@ -2,6 +2,14 @@ class OffersController < ApplicationController
   before_action :set_offer, only: [:show]
   def index
     @offers = Offer.all
+
+    @markers = @offers.geocoded.map do |offer|
+      {
+        lat: offer.latitude,
+        lng: offer.longitude,
+        marker_html: render_to_string(partial: "offers/map_marker", locals: { offer: offer })
+      }
+    end
   end
 
   def show
