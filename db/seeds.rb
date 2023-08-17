@@ -11,6 +11,8 @@ Booking.destroy_all
 
 user2 = User.create(email: "lewagon@g.com", password: "lewagon", first_name: "Kai", last_name: "Kawano", role: "user")
 user3 = User.create(email: "le_wagon@g.com", password: "le_wagon", first_name: "Horace", last_name: "Chen", role: "chef")
+p user2
+p user3
 # puts "One user was created"
 
 # 10.times do
@@ -42,6 +44,7 @@ Offer.create(
   price_pp: rand(50..300),
   cuisine: "Australian, British",
   description: "Join Chef Liam for a one-of-a-kind Culinary Journey",
+  img: "australian.jpg",
   user_id: user3.id
 )
 Offer.create(
@@ -49,6 +52,7 @@ Offer.create(
   price_pp: rand(50..300),
   cuisine: "Indian",
   description: "An Evening with Chef Ava",
+  img: "/assets/indian.jpg",
   user_id: user3.id
 )
 Offer.create(
@@ -56,6 +60,7 @@ Offer.create(
   price_pp: rand(50..300),
   cuisine: "Seafood",
   description: "Seafood Sensations by Chef Finn",
+  img: "/assets/seafood.jpg",
   user_id: user3.id
 )
 Offer.create(
@@ -63,5 +68,38 @@ Offer.create(
   price_pp: rand(50..300),
   cuisine: "Greek",
   description: "Chef Lily's Fresh and Flavorful Cuisine",
+  img: "/assets/greek.jpg",
+  user_id: user3.id
+)
+Offer.create(
+  title: "Umami Unveiled",
+  price_pp: rand(50..300),
+  cuisine: "Japanese",
+  description: "Chef Mei Ling's Asian Fusion Alchemy",
+  img: "/assets/japanese.jpg",
+  user_id: user3.id
+)
+Offer.create(
+  title: "Tableside Tales",
+  price_pp: rand(50..300),
+  cuisine: "French",
+  description: "Chef Matilda's Culinary Chronicles and Conversations",
+  img: "/assets/french.jpg",
+  user_id: user3.id
+)
+Offer.create(
+  title: "Leo's Gastronomic Safari",
+  price_pp: rand(50..300),
+  cuisine: "Middle Eastern",
+  description: "Exploring Cuisines Beyond Borders",
+  img: "/assets/middle_eastern.jpg",
+  user_id: user3.id
+)
+Offer.create(
+  title: "Malaysian Spice Odyssey",
+  price_pp: rand(50..300),
+  cuisine: "Malaysian",
+  description: "Chef Amir's Journey Through Exquisite Flavors",
+  img: "/assets/malaysian.jpg",
   user_id: user3.id
 )
