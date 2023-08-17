@@ -1,7 +1,12 @@
-<%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
-
-<%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
-<div class="container card-row gap-3 ">
+<div class="page-body">
+    <div class="index-header cols-2 justify-content-between ">
+      <h2>Explore our Chefs!</h2>
+      <div class="user-actions">
+        <%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
+        <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
+      </div>
+  </div>
+<div class="card-row">
       <% @offers.each do |offer| %>
         <div data-controller="card" data-action="mouseover->card#hover mouseout->card#unhover" class="card in-line shadow image-container" style="width: 18rem">
         <%= image_tag "http://source.unsplash.com/featured/?#{offer.title}>&#{rand(1000)}", class: 'offer-thumbnail', data: { card_target: 'hoverable' } %>

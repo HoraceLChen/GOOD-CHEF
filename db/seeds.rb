@@ -15,6 +15,16 @@ p user2
 p user3
 # puts "One user was created"
 
+10.times do
+  Booking.create(
+    date: "2023.08.15",
+    status: "pending",
+    offer_id: Offer.all.sample,
+    user_id: user3.id,
+    guests: 10
+  )
+end
+
 # 10.times do
 #   Offer.create(
 #     title: Faker::Food.dish,

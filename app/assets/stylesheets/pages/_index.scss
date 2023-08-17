@@ -1,2 +1,69 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.booking-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 8px 16px;
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 1px solid rgb(235,235,235);
+}
+
+.booking-bar .booking-content {
+  flex-grow: 1;
+  padding: 0 24px;
+}
+.avatar-large {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.title {
+  color: $red
+}
+
+.update-link{
+  text-decoration: none;
+  color: $gray;
+  text-align: right;
+  opacity: 1;
+  transition: ease .3s;
+}
+
+.update-link:hover {
+  opacity: 1;
+}
+
+.booking-bar p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.booking-bar small {
+  color: #999999;
+  font-weight: bold;
+}
+.booking-bar .booking-bar-actions {
+  opacity: 0;
+  display: flex;
+  transition: ease .3s;
+}
+
+.booking-bar:hover .booking-bar-actions {
+  opacity: 1;
+}
+
+.booking-bar .booking-bar-actions a {
+  color: #999999;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.booking-bar .booking-bar-actions a:hover {
+  color: #555555;
+}
