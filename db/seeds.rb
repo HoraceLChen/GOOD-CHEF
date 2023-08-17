@@ -15,15 +15,81 @@ p user2
 p user3
 # puts "One user was created"
 
+Offer.create(
+  title: "A Taste of Melbourne",
+  price_pp: rand(50..300),
+  cuisine: "Australian, British",
+  description: "Join Chef Liam for a one-of-a-kind Culinary Journey",
+  img: "australian.jpg",
+  user: user3
+)
+Offer.create(
+  title: "Spices & Stories",
+  price_pp: rand(50..300),
+  cuisine: "Indian",
+  description: "An Evening with Chef Ava",
+  img: "/assets/indian.jpg",
+  user: user3
+)
+Offer.create(
+  title: "Flavors of the Sea",
+  price_pp: rand(50..300),
+  cuisine: "Seafood",
+  description: "Seafood Sensations by Chef Finn",
+  img: "/assets/seafood.jpg",
+  user: user3
+)
+Offer.create(
+  title: "Garden-to-Table Magic",
+  price_pp: rand(50..300),
+  cuisine: "Greek",
+  description: "Chef Lily's Fresh and Flavorful Cuisine",
+  img: "/assets/greek.jpg",
+  user: user3
+)
+Offer.create(
+  title: "Umami Unveiled",
+  price_pp: rand(50..300),
+  cuisine: "Japanese",
+  description: "Chef Mei Ling's Asian Fusion Alchemy",
+  img: "/assets/japanese.jpg",
+  user: user3
+)
+Offer.create(
+  title: "Tableside Tales",
+  price_pp: rand(50..300),
+  cuisine: "French",
+  description: "Chef Matilda's Culinary Chronicles and Conversations",
+  img: "/assets/french.jpg",
+  user: user3
+)
+Offer.create(
+  title: "Leo's Gastronomic Safari",
+  price_pp: rand(50..300),
+  cuisine: "Middle Eastern",
+  description: "Exploring Cuisines Beyond Borders",
+  img: "/assets/middle_eastern.jpg",
+  user: user3
+)
+Offer.create(
+  title: "Malaysian Spice Odyssey",
+  price_pp: rand(50..300),
+  cuisine: "Malaysian",
+  description: "Chef Amir's Journey Through Exquisite Flavors",
+  img: "/assets/malaysian.jpg",
+  user: user3
+)
+
 10.times do
-  Booking.create(
+  Booking.create!(
     date: "2023.08.15",
     status: "pending",
-    offer_id: Offer.all.sample,
-    user_id: user3.id,
+    offer: Offer.all.sample,
+    user: user3,
     guests: 10
   )
 end
+
 
 # 10.times do
 #   Offer.create(
@@ -49,67 +115,3 @@ end
 # puts "One booking was created"
 
 # puts "Seeds was successful"
-Offer.create(
-  title: "A Taste of Melbourne",
-  price_pp: rand(50..300),
-  cuisine: "Australian, British",
-  description: "Join Chef Liam for a one-of-a-kind Culinary Journey",
-  img: "australian.jpg",
-  user_id: user3.id
-)
-Offer.create(
-  title: "Spices & Stories",
-  price_pp: rand(50..300),
-  cuisine: "Indian",
-  description: "An Evening with Chef Ava",
-  img: "/assets/indian.jpg",
-  user_id: user3.id
-)
-Offer.create(
-  title: "Flavors of the Sea",
-  price_pp: rand(50..300),
-  cuisine: "Seafood",
-  description: "Seafood Sensations by Chef Finn",
-  img: "/assets/seafood.jpg",
-  user_id: user3.id
-)
-Offer.create(
-  title: "Garden-to-Table Magic",
-  price_pp: rand(50..300),
-  cuisine: "Greek",
-  description: "Chef Lily's Fresh and Flavorful Cuisine",
-  img: "/assets/greek.jpg",
-  user_id: user3.id
-)
-Offer.create(
-  title: "Umami Unveiled",
-  price_pp: rand(50..300),
-  cuisine: "Japanese",
-  description: "Chef Mei Ling's Asian Fusion Alchemy",
-  img: "/assets/japanese.jpg",
-  user_id: user3.id
-)
-Offer.create(
-  title: "Tableside Tales",
-  price_pp: rand(50..300),
-  cuisine: "French",
-  description: "Chef Matilda's Culinary Chronicles and Conversations",
-  img: "/assets/french.jpg",
-  user_id: user3.id
-)
-Offer.create(
-  title: "Leo's Gastronomic Safari",
-  price_pp: rand(50..300),
-  cuisine: "Middle Eastern",
-  description: "Exploring Cuisines Beyond Borders",
-  img: "/assets/middle_eastern.jpg",
-  user_id: user3.id
-)
-Offer.create(
-  title: "Malaysian Spice Odyssey",
-  price_pp: rand(50..300),
-  cuisine: "Malaysian",
-  description: "Chef Amir's Journey Through Exquisite Flavors",
-  img: "/assets/malaysian.jpg",
-  user_id: user3.id
-)

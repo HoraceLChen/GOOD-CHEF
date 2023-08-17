@@ -4,6 +4,7 @@
     <%= f.input :cuisine, placeholder: 'Malaysian' %>
     <%= f.input :price_pp, placeholder: '$99'%>
     <%= f.input :description, placeholder: 'Fuiiyyyooooo' %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.button :submit, class: 'btn btn-danger' %>
   <% end %>
 </div>
