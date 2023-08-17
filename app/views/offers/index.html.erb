@@ -3,14 +3,15 @@
 <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
 <div class="container card-row gap-3 ">
       <% @offers.each do |offer| %>
-        <div class="card in-line shadow " style="width: 18rem">
-        <%= image_tag "http://source.unsplash.com/featured/?#{offer.title}>&#{rand(1000)}", class: 'offer-thumbnail' %>
+        <div data-controller="card" data-action="mouseover->card#hover mouseout->card#unhover" class="card in-line shadow image-container" style="width: 18rem">
+        <%= image_tag "http://source.unsplash.com/featured/?#{offer.title}>&#{rand(1000)}", class: 'offer-thumbnail', data: { card_target: 'hoverable' } %>
+        <div data-card-target="hoverable" class="hover-text"><%= offer.title %></div>
         <div class="card-body align-center">
         <h5 class="card-title"> <%= offer.title %> </h5>
         <h6 class="card-subtitle mb-2 text-body-secondary"> <%= offer.cuisine %> </h6>
         <p class="card-text"> $ <%= offer.price_pp %> </p>
         <%= link_to("...read more", offer_path(offer), class: "btn btn-outline-secondary") %>
+        </div>
     </div>
-  </div>
       <% end %>
 </div>
