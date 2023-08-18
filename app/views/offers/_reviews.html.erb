@@ -1,4 +1,4 @@
-<h1>Hello</h1>
+<h1>Reviews</h1>
 <% if @offer.reviews.any?%>
   <% @reviews.each do |review|  %>
   <p><%= review.rating %></p>
@@ -15,5 +15,5 @@
     <% end %>
   </div>
   <%= f.input :description %>
-  <%= f.submit %>
+  <%= f.button :submit, "Submit Review", class: "btn btn-danger" %>
 <% end %>

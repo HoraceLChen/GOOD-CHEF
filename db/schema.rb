@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_035139) do
 
   create_table "bookings", force: :cascade do |t|
     t.date "date"
-    t.integer "status", default: 0
+    t.string "status"
     t.bigint "offer_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -90,7 +90,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_18_035139) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.integer "role"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

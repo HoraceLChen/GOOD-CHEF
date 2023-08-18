@@ -4,15 +4,15 @@
     <% @bookings.each do |booking| %>
       <div class="booking-bar">
         <img src = 'https://www.escoffier.edu/wp-content/uploads/2016/02/Smiling-female-chef-with-white-hat-and-uniform-in-a-kitchen-e1611773135718.jpg' class="avatar-large"/>
-          <div class="booking-content align-item" >
+          <div class="booking-content" >
             <p><small><%= booking.date %></small></p>
             <p class="title"><strong><%= booking.offer.title %></strong></p>
             <p>Cuisine : <%= booking.offer.cuisine %></p>
             <p>Description : <%= booking.offer.description %></p>
             <p>Guests : <%= booking.guests %></p>
           </div>
-          <div class="booking-status d-flex justify-content-end px-3 ">
-            <p class="btn btn-secondary"><em><%= booking.status %></em></p>
+          <div class="booking-status d-flex justify-content-end px-3">
+            <p class="btn-secondary"><%= booking.status %></p>
           </div>
       </div>
     <% end %>
@@ -27,20 +27,19 @@
               <p>Description : <%= booking.offer.description %></p>
               <p>Guests : <%= booking.guests %></p>
               </div>
-            <div class="booking-status d-flex justify-content-end px-3 gap-3 ">
-              <p class="btn btn-secondary"><em><%= booking.status %></em></p>
-            </div>
-        </div>
-
+            <div class="booking-status d-flex justify-content-end gap-3">
+              <p class="btn btn-secondary"><%= booking.status %></p>
       <% if booking.status == 'pending' %>
                 <%= simple_form_for booking do |f| %>
                 <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
-                <%= f.submit 'Accept', class: 'btn btn-success' %>
+                <%= f.submit 'Accept', class: 'btn btn-danger' %>
                 <% end %>
                 <%= simple_form_for booking do |f| %>
                 <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-                <%= f.submit 'Reject', class: 'btn btn-danger' %>
+                <%= f.submit 'Reject', class: 'btn btn-light' %>
                 <% end %>
         <% end %>
+            </div>
+        </div>
     <% end %>
 </div>
