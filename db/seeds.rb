@@ -54,7 +54,7 @@ Offer.create(
   price_pp: rand(50..300),
   cuisine: "Australian, British",
   address: "Richmond, Victoria, Australia",
-  description: "Join Chef Liam for a one-of-a-kind Culinary Journey",
+  description: "Embark on an unforgettable culinary voyage through the heart of Melbourne with A Taste of Melbourne: Join Chef Liam for a Culinary Journey.\nLet Chef Liam be your guide to the city's vibrant food scene, as he curates an experience that captures the very essence of Melbourne's diverse flavors.",
   img: "australian.jpg",
   user_id: user3.id
 )
@@ -63,7 +63,7 @@ Offer.create(
   price_pp: rand(50..300),
   cuisine: "Indian",
   address: "St Kilda Road, Melbourne, Australia",
-  description: "An Evening with Chef Ava",
+  description: "Chef Maya invites you to partake in an enchanting culinary voyage where flavors are the protagonists and each dish carries a chapter of its own.\nJoin Chef Maya on a journey of taste and tradition as she crafts a symphony of spices that tell tales of her culinary explorations.",
   img: "/assets/indian.jpg",
   user_id: user3.id
 )
@@ -72,7 +72,7 @@ Offer.create(
   price_pp: rand(50..300),
   cuisine: "Seafood",
   address: "Prahran, Melbourne, Australia",
-  description: "Seafood Sensations by Chef Finn",
+  description: "Dive into Flavors of the Sea: A Culinary Expedition with Chef Finn and embark on an oceanic journey where every dish tells the story of the deep blue.\nLet Chef Finn guide you through an exploration of maritime cuisine, where the freshest catches are transformed into exquisite creations that honor the bounties of the sea. From the briny scent of seaweed to the delicate sweetness of seafood, each bite embodies the essence of the ocean. Join us in savoring the maritime tales that Chef Finn masterfully weaves, as he unveils a culinary symphony of flavors that are as captivating as the open sea itself.",
   img: "/assets/seafood.jpg",
   user_id: user3.id
 )
