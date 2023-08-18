@@ -18,22 +18,19 @@
       <% end %>
     </div>
   </div>
-
-  <div class="card-row">
-      <% @offers.each do |offer| %>
-        <div data-controller="card" data-action="mouseover->card#hover mouseout->card#unhover" class="card in-line shadow image-container" style="width: 18rem">
-        <%= image_tag "http://source.unsplash.com/featured/?#{offer.title}>&#{rand(1000)}", class: 'offer-thumbnail', data: { card_target: 'hoverable' } %>
-        <div data-card-target="hoverable" class="hover-text"><%= offer.title %></div>
-          <div class="card-body align-center">
-            <h5 class="card-title"> <%= offer.title %> </h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary"> <%= offer.cuisine %> </h6>
-            <p class="card-text"> $ <%= offer.price_pp %> </p>
-            <%= link_to("...read more", offer_path(offer), class: "btn btn-outline-secondary") %>
-          </div>
-        </div>
-      <% end %>
-  </div>
-  <div class="container my-3">
-    <%= render 'offers/map', markers: @markers %>
-  </div>
+</div>
+<div class="card-row">
+  <% @offers.each do |offer| %>
+    <div data-controller="card" data-action="mouseover->card#hover mouseout->card#unhover" class="card-offer in-line shadow image-container" style="background-image: url('http://source.unsplash.com/featured/?<%= offer.title %>&<%= rand(1000) %>');">
+      <div>
+        <h4><%= offer.title %></h4>
+        <p class="card-subtitle mb-2 "> <%= offer.cuisine %> </p>
+        <p class="card-text"> $ <%= offer.price_pp %> </p>
+        <%= link_to("...read more", offer_path(offer), class: "btn btn-outline-light") %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div class="container my-3">
+  <%= render 'offers/map', markers: @markers %>
 </div>
