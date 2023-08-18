@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 import mapboxgl from 'mapbox-gl'
-// import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 // Connects to data-controller="map"
 export default class extends Controller {
@@ -10,44 +9,45 @@ export default class extends Controller {
   }
   connect() {
     console.log('insert map here');
-    console.log(this.divTarget);
     mapboxgl.accessToken = this.apiKeyValue
-    // this.map = new mapboxgl.Map({
-    //   container: this.element,
-    // })
-
-    const map = new mapboxgl.Map({
-      container: 'map', // container id
+    this.map = new mapboxgl.Map({
+      container: this.element,
       style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-74.5, 40], // starting position
-      zoom: 9
-    });
+    })
 
-    // this.#addMarkersToMap()
-    // this.#fitMapToMarkers()
-    // this.map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
-    //                                     mapboxgl: mapboxgl }))
+    // const map = new mapboxgl.Map({
+    //   container: this, // container id
+    //   style: 'mapbox://styles/mapbox/streets-v11',
+    //   center: [-74.5, 40], // starting position
+    //   zoom: 9
+    // });
+    console.log(this);
+    this.#addMarkersToMap()
+    this.#fitMapToMarkers()
+
   }
 
-// #addMarkersToMap() {
-//   this.markersValue.forEach((marker) => {
-//     // Create a popup
-//     const popup = new mapboxgl.Popup().setHTML(marker.popup_html)
+  #addMarkersToMap() {
+    console.log('adding markers to map');
+    this.markersValue.forEach((marker) => {
+      const popup = new mapboxgl.Popup().setHTML(marker.info_window_html)
 
-//     // Create a custom marker
-//     const customMarker = document.createElement("div")
-//     customMarker.innerHTML = marker.marker_html
+      // Create a HTML element for your custom marker
+      const customMarker = document.createElement("div")
+      customMarker.innerHTML = marker.map_marker_html
+      console.log(customMarker);
+      console.log(marker.lng);
 
-//     new mapboxgl.Marker(customMarker)
-//       .setLngLat([ marker.lng, marker.lat ])
-//       .setPopup(popup)
-//       .addTo(this.map)
-//   })
-// }
+      // Pass the element as an argument to the new marker
+      new mapboxgl.Marker(customMarker)
+        .setLngLat([marker.lng, marker.lat])
+        .addTo(this.map)
+    })
+  }
 
-// #fitMapToMarkers() {
-//   const bounds = new mapboxgl.LngLatBounds()
-//   this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
-//   this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 500 })
-// }
+  #fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds()
+    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    this.map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+  }
 }

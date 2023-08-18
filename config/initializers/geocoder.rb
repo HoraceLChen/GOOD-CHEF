@@ -27,7 +27,7 @@ Geocoder.configure(
   Geocoder.configure(
     # [...]
     units: :km, # Defaults to miles (:mi)
-    lookup: :mapbox
+    lookup: :nominatim
     # [...]
   )
 )

@@ -7,7 +7,8 @@ class OffersController < ApplicationController
       {
         lat: offer.latitude,
         lng: offer.longitude,
-        marker_html: render_to_string(partial: "offers/map_marker", locals: { offer: offer })
+        info_window_html: render_to_string(partial: "offers/info_window", locals: {offer: offer}),
+        map_marker_html: render_to_string(partial: "offers/map_marker", locals: { offer: offer })
       }
     end
   end
