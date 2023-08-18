@@ -1,11 +1,24 @@
 <div class="page-body">
-    <div class="index-header cols-2 justify-content-between ">
-      <h2>Explore our Chefs!</h2>
-      <div class="user-actions">
-        <%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
-        <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
-      </div>
+  <div class="index-header cols-2 justify-content-between ">
+    <h2>Explore our Chefs!</h2>
+    <div class="user-actions">
+      <%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
+      <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
+    </div>
   </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-8 my-3">
+      <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control",
+              placeholder: "Type a keyword"
+          %>
+        <%= submit_tag "Search", name: "", class: "btn btn-outline-danger" %>
+      <% end %>
+    </div>
+  </div>
+
   <div class="card-row">
       <% @offers.each do |offer| %>
         <div data-controller="card" data-action="mouseover->card#hover mouseout->card#unhover" class="card in-line shadow image-container" style="width: 18rem">
@@ -20,9 +33,7 @@
         </div>
       <% end %>
   </div>
-
   <div class="container my-3">
     <%= render 'offers/map', markers: @markers %>
   </div>
-
 </div>

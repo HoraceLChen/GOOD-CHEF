@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <div class="container col-6 col-md-4">
+    <%= simple_form_for @offer do |f| %>
+      <h1>Edit</h1>
+      <%= f.input :title %>
+      <%= f.input :cuisine %>
+      <%= f.input :price_pp %>
+      <%= f.input :description %>
+      <%= f.button :submit, class: 'btn btn-danger' %>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to("Back", offer_path, class: "btn btn-outline-secondary float-right") %>
+  </div>
+
+</div>
