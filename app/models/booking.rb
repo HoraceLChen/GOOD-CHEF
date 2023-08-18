@@ -4,9 +4,13 @@ class Booking < ApplicationRecord
 
   before_create :set_default_status
 
+  def pending?
+    status == "pending"
+  end
   private
 
   def set_default_status
     self.status = "pending"
   end
+
 end

@@ -19,6 +19,7 @@ Offer.create(
   title: "A Taste of Melbourne",
   price_pp: rand(50..300),
   cuisine: "Australian, British",
+  address: "Richmond, Victoria, Australia",
   description: "Join Chef Liam for a one-of-a-kind Culinary Journey",
   img: "australian.jpg",
   user: user3
@@ -27,6 +28,7 @@ Offer.create(
   title: "Spices & Stories",
   price_pp: rand(50..300),
   cuisine: "Indian",
+  address: "St Kilda Road, Melbourne, Australia",
   description: "An Evening with Chef Ava",
   img: "/assets/indian.jpg",
   user: user3
@@ -35,6 +37,7 @@ Offer.create(
   title: "Flavors of the Sea",
   price_pp: rand(50..300),
   cuisine: "Seafood",
+  address: "Prahran, Melbourne, Australia",
   description: "Seafood Sensations by Chef Finn",
   img: "/assets/seafood.jpg",
   user: user3
@@ -43,6 +46,7 @@ Offer.create(
   title: "Garden-to-Table Magic",
   price_pp: rand(50..300),
   cuisine: "Greek",
+  address: "Heidelberg, Victoria, Australia",
   description: "Chef Lily's Fresh and Flavorful Cuisine",
   img: "/assets/greek.jpg",
   user: user3
@@ -51,6 +55,7 @@ Offer.create(
   title: "Umami Unveiled",
   price_pp: rand(50..300),
   cuisine: "Japanese",
+  address: "Toorak, Victoria, Australia",
   description: "Chef Mei Ling's Asian Fusion Alchemy",
   img: "/assets/japanese.jpg",
   user: user3
@@ -59,6 +64,7 @@ Offer.create(
   title: "Tableside Tales",
   price_pp: rand(50..300),
   cuisine: "French",
+  address: "Parkville, Victoria, Australia",
   description: "Chef Matilda's Culinary Chronicles and Conversations",
   img: "/assets/french.jpg",
   user: user3
@@ -67,6 +73,7 @@ Offer.create(
   title: "Leo's Gastronomic Safari",
   price_pp: rand(50..300),
   cuisine: "Middle Eastern",
+  address: "Bundoora, Victoria, Australia",
   description: "Exploring Cuisines Beyond Borders",
   img: "/assets/middle_eastern.jpg",
   user: user3
@@ -75,6 +82,7 @@ Offer.create(
   title: "Malaysian Spice Odyssey",
   price_pp: rand(50..300),
   cuisine: "Malaysian",
+  address: "Preston, Victoria, Australia",
   description: "Chef Amir's Journey Through Exquisite Flavors",
   img: "/assets/malaysian.jpg",
   user: user3
@@ -85,33 +93,9 @@ Offer.create(
     date: "2023.08.15",
     status: "pending",
     offer: Offer.all.sample,
-    user: user3,
+    user: user2,
     guests: 10
   )
 end
 
-
-# 10.times do
-#   Offer.create(
-#     title: Faker::Food.dish,
-#     price_pp: rand(50..300),
-#     cuisine: Faker::Food.ethnic_category,
-#     description: Faker::Food.description,
-#     user_id: user3.id
-#   )
-#   # + image
-#   Booking.create(
-#     date: "2023.08.15",
-#     status: "pending",
-#     offer_id: Offer.all.sample.id,
-#     user_id: user2.id,
-#     guests: 10
-#   )
-# end
-
-# puts "Offers were created 10 times"
-
-
-# puts "One booking was created"
-
-# puts "Seeds was successful"
+puts "8 offers where created"
