@@ -20,6 +20,8 @@ class OffersController < ApplicationController
 
   def show
     @booking = Booking.new
+    @review = Review.new
+    @reviews = @offer.reviews
   end
 
   def new
