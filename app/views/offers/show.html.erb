@@ -1,33 +1,37 @@
-  <div class="index-header cols-2 d-flex justify-content-end">
-    <div class="user-actions">
-      <%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
-      <%= link_to("Make new offer", new_offer_path, class: "btn btn-outline-secondary my-3") %>
-      <%= link_to("Back", offers_path, class: "btn btn-outline-secondary my-3") %>
-      <%= link_to("Edit this offer", edit_offer_path, class: "btn btn-outline-secondary my-3") %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= @offer.img %>);">
+
+    <div class="d-flex align-items-center flex-column">
+      <h1><%= @offer.title %></h1>
     </div>
+
   </div>
 
-  <div class="photos">
-    <%= image_tag "#{@offer.img}" %>
-  </div>
+<div class="page-body">
+  <%= link_to("← Back", offers_path, class: "link-secondary") %>
 
-  <div class="container card-trip justify-content-between">
+  <div class="container m-5">
     <div class="row">
 
-      <div class="card-trip-infos col-8 my-5">
-        <h2><%= @offer.title %></h2>
-          <h6><%= @offer.cuisine %></h6>
-          <p><%= @offer.description %></p>
-          <h2 class="card-trip-pricing"><%= @offer.price_pp %></h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      <div class="card-trip-infos col-8">
+
+        <div class="card-description pe-3"><p><%= @offer.description %></p></div>
+
+        <div class="card-details"><img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="avatar-bordered" /><h6 class="cuisine ps-2">Expert in <%= @offer.cuisine %> cuisine</h6>
+          </div>
+
+        <%= link_to("Edit this offer", edit_offer_path, class: "btn btn-outline-secondary my-3") if current_user == @offer.user %>
       </div>
 
-      <div class="booking-form col-4 my-5">
-        <%= simple_form_for([@offer, @booking]) do |f| %>
-          <%= f.input :date %>
-          <%= f.input :guests %>
-          <%= f.submit %>
-        <% end %>
+      <div class="booking-form col-4 border border-ridge rounded shadow-sm pt-2">
+
+          <%= simple_form_for([@offer, @booking]) do |f| %>
+            <%= f.input :date %>
+            <%= f.input :guests %>
+            <div class="d-grid gap-2">
+              <%= f.button :submit, "Book a chef!", class: "btn btn-danger" %>
+              <h5 class="card-trip-pricing mt-1">$<%= @offer.price_pp %> AUD per 1 person</h2>
+            </div>
+          <% end %>
       </div>
 
     </div>

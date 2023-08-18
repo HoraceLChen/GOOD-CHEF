@@ -5,8 +5,6 @@
 
     </div>
   </div>
-
-
   <div class="card-row">
       <% @offers.each do |offer| %>
         <div data-controller="card" data-action="mouseover->card#hover mouseout->card#unhover" class="card in-line shadow image-container" style="width: 18rem">
@@ -24,3 +22,4 @@
   <div class="container my-3">
     <%= render 'offers/map', markers: @markers %>
   </div>
+
