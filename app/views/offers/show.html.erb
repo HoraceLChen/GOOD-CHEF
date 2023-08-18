@@ -1,4 +1,5 @@
 <div class="page-body">
+
   <div class="index-header cols-2 d-flex justify-content-end">
     <div class="user-actions">
       <%= link_to("See bookings", bookings_path(current_user), class: "btn btn-outline-secondary my-3") %>
@@ -8,24 +9,30 @@
     </div>
   </div>
 
-  <div class="container card-trip justify-content-between">
+  <div class="photos">
     <%= image_tag "#{@offer.img}" %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= @offer.title %></h2>
-          <h6><%= @offer.cuisine %></h6>
-          <p><%= @offer.description %></p>
-        </div>
-        <h2 class="card-trip-pricing"><%= @offer.price_pp %></h2>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-      </div>
   </div>
 
-  <div>
-    <%= simple_form_for([@offer, @booking]) do |f| %>
-      <%= f.input :date %>
-      <%= f.input :guests %>
-      <%= f.submit %>
-    <% end %>
+  <div class="container card-trip justify-content-between">
+    <div class="row">
+
+      <div class="card-trip-infos col-8 my-5">
+        <h2><%= @offer.title %></h2>
+          <h6><%= @offer.cuisine %></h6>
+          <p><%= @offer.description %></p>
+          <h2 class="card-trip-pricing"><%= @offer.price_pp %></h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+
+      <div class="booking-form col-4 my-5">
+        <%= simple_form_for([@offer, @booking]) do |f| %>
+          <%= f.input :date %>
+          <%= f.input :guests %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+
+    </div>
   </div>
+
 </div>
