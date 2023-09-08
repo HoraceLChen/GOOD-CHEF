@@ -1,23 +1,26 @@
-<div class="page-body">
-  <div class="index-header cols-2 justify-content-between ">
-    <h2>Explore our Chefs!</h2>
-
-  </div>
+<div class="d-flex justify-content-center my-3">
+  <h2>Explore our Chefs!</h2>
 </div>
-<div class="card-row">
-  <% @offers.each do |offer| %>
-   <div data-controller="card" data-action="mouseover->card#hover mouseout->card#unhover" class="card-offer in-line shadow image-container" style="background-image: url('<%= offer.photos.any? ? "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg" : "http://source.unsplash.com/featured/?#{offer.title}&#{rand(1000)}" %>');">
+
+<div class="card-row" data-controller="index" data-index-target="parent">
+  <% @offers.each_with_index do |offer, index| %>
+    <% grid_class = "div#{index + 1}" %>
+    <div data-controller="card"
+         data-action="mouseover->card#hover mouseout->card#unhover"
+         class="card-offer <%= grid_class %> in-line shadow image-container"
+         style="background-image: url(https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg)">
 
       <div>
         <h4><%= offer.title %></h4>
-        <p class="card-subtitle mb-2 "> <%= offer.cuisine %> </p>
-        <p class="card-text"> $ <%= offer.price_pp %> </p>
+        <p class="card-subtitle mb-2"><%= offer.cuisine %></p>
+        <p class="card-text">$ <%= offer.price_pp %></p>
         <%= link_to("read more", offer_path(offer), class: "readmore") %>
       </div>
     </div>
   <% end %>
 </div>
+
+<%= link_to "Load More", "#", data: { action: "click->index#loadMore" } %>
 <div class="container my-3">
   <%= render 'offers/map', markers: @markers %>
 </div>
-<%# push again %>
