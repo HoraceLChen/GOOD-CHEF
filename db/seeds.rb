@@ -21,7 +21,7 @@ Offer.create(
   cuisine: "Australian, British",
   address: "Richmond, Victoria, Australia",
   description: "Embark on an unforgettable culinary voyage through the heart of Melbourne with A Taste of Melbourne: Join Chef Liam for a Culinary Journey.\nLet Chef Liam be your guide to the city's vibrant food scene, as he curates an experience that captures the very essence of Melbourne's diverse flavors.",
-  img: "australian.jpg",
+  img: "assets/images/australian.jpg",
   user: user3
 )
 Offer.create(
