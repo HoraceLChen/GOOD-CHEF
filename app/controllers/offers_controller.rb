@@ -3,12 +3,13 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.limit(5)
+    @total_offers = Offer.count
+
     if params[:query].present?
       @offers = Offer.search(params[:query])
     else
-      @offers = Offer.all
+      @offers = Offer.limit(5)
     end
-    @offers = Offer.limit(5)
     @markers = Offer.all.geocoded.map do |offer|
       {
         lat: offer.latitude,

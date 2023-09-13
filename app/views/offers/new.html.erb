@@ -1,4 +1,10 @@
-<div class="page-body container col-6 col-md-4">
+<div class="banner banner-sm" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1505935428862-770b6f24f629?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3867&q=80);">
+    <div class="d-flex align-items-center flex-column">
+      <h2>Create an Offer</h1>
+    </div>
+  </div>
+
+<div class="page-body container col-6 col-md-4 mt-3">
   <%= simple_form_for @offer do |f| %>
     <%= f.input :title, placeholder: 'Uncle Roger' %>
     <%= f.input :cuisine, placeholder: 'Malaysian' %>

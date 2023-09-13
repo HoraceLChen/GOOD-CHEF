@@ -1,18 +1,31 @@
-<h1>Reviews</h1>
+<h2>Reviews</h2>
 <% if @offer.reviews.any?%>
   <% @reviews.each do |review|  %>
-  <p><%= review.rating %></p>
-  <p><%= review.description %></p>
-  <p><%= review.user.full_name %></p>
+  <span class="fa-stack fa-2x fa-pull-left" style="width: 2em;"><i class="fa-solid fa-quote-left"></i></span>
+  <div class="star-rating">
+      <% 1.upto(5) do |i| %>
+        <% if i <= review.rating %>
+          <i class="fas fa-star"></i>
+        <% else %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <% end %>
+  </div>
+  <p class="my-1"><%= review.description %></p>
+  <p class="font-weight-bold"><%= review.user.full_name %></p>
   <% end %>
+  <% else %>
+    <p>No reviews yet. Write the first one!</p>
 <% end %>
-
+<h2>Write a review</h2>
 <%= simple_form_for([@offer, @review]) do |f| %>
-  <div class="rating">
-    <% (1..5).each do |i| %>
-      <%= f.radio_button :rating, i, id: "rating#{i}" %>
-      <%= f.label :rating, "#{i} ★", for: "rating#{i}" %>
-    <% end %>
+  <div class="star-rating mb-3">
+    <p class="mb-0">Rating</p>
+    <input type="radio" name="review[rating]" value="1" />
+    <input type="radio" name="review[rating]" value="2" />
+    <input type="radio" name="review[rating]" value="3" checked />
+    <input type="radio" name="review[rating]" value="4" />
+    <input type="radio" name="review[rating]" value="5" />
   </div>
   <%= f.input :description %>
   <%= f.button :submit, "Submit Review", class: "btn btn-danger" %>

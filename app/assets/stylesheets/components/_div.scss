@@ -1,9 +1,17 @@
 .container {
   padding: 0cm;
 }
+
 .user-actions {
   justify-content: end;
   align-content: center;
   display: flex;
   gap: 1rem;
+}
+
+#myNavbar {
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  left: -24px;
 }

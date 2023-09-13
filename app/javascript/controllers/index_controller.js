@@ -4,6 +4,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["parent"];
 
+  connect() {
+    console.log("index connected!");
+  }
+
   initialize() {
     this.offset = 0;
     this.flipLayout = false;
