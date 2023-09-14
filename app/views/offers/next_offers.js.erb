@@ -1,0 +1,10 @@
+<% @next_offers.each do |offer| %>
+ <div data-controller="card" class="card-offer in-line shadow image-container" style="background-image: url(https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg">
+      <div>
+        <h4><%= offer.title %></h4>
+        <p class="card-subtitle mb-2 "> <%= offer.cuisine %> </p>
+        <p class="card-text"> $ <%= offer.price_pp %> </p>
+        <%= link_to("read more", offer_path(offer), class: "readmore") %>
+      </div>
+    </div>
+<% end %>

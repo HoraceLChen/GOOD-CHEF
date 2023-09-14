@@ -1,34 +1,33 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon px-5 ">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon pl-5 pr-0" id="myNavbar" >
 
-  <div class="container-fluid">
+  <div class="container-fluid pr-3">
     <div class="logo-div">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logo.png" %>
+      <h1 class="text-light" > GOOD CHEF </h1>
     <% end %>
-    <h1> GOOD CHEF </h1>
     </div>
-<div class="row w-50 justify-content-center ">
-    <div class="col-sm-8 my-3">
-      <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
-        <%= text_field_tag :query,
-              params[:query],
-              class: "form-control",
-              placeholder: "Type a keyword"
-          %>
-        <%= submit_tag "Search", name: "", class: "btn btn-outline-danger" %>
-      <% end %>
-    </div>
-  </div>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto justify-content-end ">
+      <ul class="navbar-nav justify-content-end ">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <div class="col-sm-8 my-2">
+      <%= form_with url: offers_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+              params[:query],
+              class: "form-control-sm",
+              placeholder: "Type a keyword"
+          %>
+        <%= button_tag type: "submit", name: "", class: "btn btn-outline-danger", id: "search" do %>
+          <i class="fas fa-search fa-sm"></i>
+        <% end %>
+      <% end %>
+    </div>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,7 +42,7 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link text-light" %>
           </li>
         <% end %>
       </ul>

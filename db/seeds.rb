@@ -16,38 +16,46 @@ p user3
 # puts "One user was created"
 
 Offer.create(
-  title: "A Taste of Melbourne",
+  title: "Haiku of Flavours",
   price_pp: rand(50..300),
-  cuisine: "Australian, British",
-  address: "Richmond, Victoria, Australia",
-  description: "Embark on an unforgettable culinary voyage through the heart of Melbourne with A Taste of Melbourne: Join Chef Liam for a Culinary Journey.\nLet Chef Liam be your guide to the city's vibrant food scene, as he curates an experience that captures the very essence of Melbourne's diverse flavors.",
-  img: "australian.jpg",
-  user: user3
-)
-Offer.create(
-  title: "Spices & Stories",
-  price_pp: rand(50..300),
-  cuisine: "Indian",
+  cuisine: "Japanese",
   address: "St Kilda Road, Melbourne, Australia",
-  description: "Chef Maya invites you to partake in an enchanting culinary voyage where flavors are the protagonists and each dish carries a chapter of its own.\nJoin Chef Maya on a journey of taste and tradition as she crafts a symphony of spices that tell tales of her culinary explorations.",
-  img: "/assets/indian.jpg",
+  description: "Chef Maya invites you to partake in an enchanting culinary voyage where flavours are the protagonists and each dish carries a chapter of its own.\nJoin Chef Maya on a journey of taste and tradition as she crafts a symphony of spices that tell tales of her culinary explorations.",
+  img: "/assets/japanese2.jpg",
   user: user3
 )
+
 Offer.create(
-  title: "Flavors of the Sea",
+  title: "The Botanic Plate",
+  price_pp: rand(50..300),
+  cuisine: "Modern Australian",
+  address: "Richmond, Melbourne, Australia",
+  description: "Discover the essence of Modern Australian dining at The Botanic Plate, located in the culinary heart of Melbourne. Our menu puts the spotlight on locally sourced ingredients, transforming them into inventive, mouth-watering dishes. Whether you're looking for a casual brunch or an elegant dinner, our inviting ambiance and a thoughtfully curated selection of wines promise an unforgettable experience you'll want to revisit.",
+  img: "/assets/australian.jpg",
+  user: user3
+)
+
+
+Offer.create(
+  title: "Flavours of the Sea",
   price_pp: rand(50..300),
   cuisine: "Seafood",
   address: "Prahran, Melbourne, Australia",
-  description: "Dive into Flavors of the Sea: A Culinary Expedition with Chef Finn and embark on an oceanic journey where every dish tells the story of the deep blue.\nLet Chef Finn guide you through an exploration of maritime cuisine, where the freshest catches are transformed into exquisite creations that honor the bounties of the sea. From the briny scent of seaweed to the delicate sweetness of seafood, each bite embodies the essence of the ocean. Join us in savoring the maritime tales that Chef Finn masterfully weaves, as he unveils a culinary symphony of flavors that are as captivating as the open sea itself.",
+  description: "Dive into flavours of the Sea: A Culinary Expedition with Chef Finn and embark on an oceanic journey where
+   every dish tells the story of the deep blue.\nLet Chef Finn guide you through an exploration of maritime cuisine,
+    where the freshest catches are transformed into exquisite creations that honor the bounties of the sea.
+     From the briny scent of seaweed to the delicate sweetness of seafood, each bite embodies the essence of the ocean.
+      Join us in savoring the maritime tales that Chef Finn masterfully weaves, as he unveils a culinary symphony of flavours
+       that are as captivating as the open sea itself.",
   img: "/assets/seafood.jpg",
   user: user3
 )
 Offer.create(
-  title: "Garden-to-Table Magic",
+  title: "Garden Feast",
   price_pp: rand(50..300),
   cuisine: "Greek",
   address: "Heidelberg, Victoria, Australia",
-  description: "Chef Lily's Fresh and Flavorful Cuisine",
+  description: "Chef Lily offers a farm-to-fork experience that captures the essence of Greek cuisine. Enjoy freshly harvested herbs and vegetables in a variety of traditional dishes, all crafted to bring you an authentic taste of Greece.",
   img: "/assets/greek.jpg",
   user: user3
 )
@@ -56,35 +64,35 @@ Offer.create(
   price_pp: rand(50..300),
   cuisine: "Japanese",
   address: "Toorak, Victoria, Australia",
-  description: "Chef Mei Ling's Asian Fusion Alchemy",
+  description: "Chef Hiroshi fuses traditional Japanese culinary arts with modern flair. Explore the unique fifth taste, Umami, as you are guided through a handpicked selection of dishes that exemplify the art of Asian Fusion.",
   img: "/assets/japanese.jpg",
   user: user3
 )
 Offer.create(
   title: "Tableside Tales",
   price_pp: rand(50..300),
-  cuisine: "French",
+  cuisine: "Italian",
   address: "Parkville, Victoria, Australia",
-  description: "Chef Matilda's Culinary Chronicles and Conversations",
-  img: "/assets/french.jpg",
+  description: "Chef Hiroshi fuses traditional Japanese culinary arts with modern flair. Explore the unique fifth taste, Umami, as you are guided through a handpicked selection of dishes that exemplify the art of Asian Fusion.",
+  img: "/assets/Italian.jpg",
   user: user3
 )
 Offer.create(
-  title: "Leo's Gastronomic Safari",
+  title: "Leo's Gastronomia",
   price_pp: rand(50..300),
   cuisine: "Middle Eastern",
   address: "Bundoora, Victoria, Australia",
-  description: "Exploring Cuisines Beyond Borders",
+  description: "Experience the Middle East through Leo's Gastronomia. Chef Leo crafts a menu that transcends borders, showcasing the flavours and spices that define this rich culinary landscape. It's not just a meal, it's a flavourful expedition.",
   img: "/assets/middle_eastern.jpg",
   user: user3
 )
 Offer.create(
-  title: "Malaysian Spice Odyssey",
+  title: "Spice Odyssey",
   price_pp: rand(50..300),
   cuisine: "Malaysian",
   address: "Preston, Victoria, Australia",
-  description: "Chef Amir's Journey Through Exquisite Flavors",
-  img: "/assets/malaysian.jpg",
+  description: "Step into Chef Jin's kitchen for a journey through Malaysia's aromatic spice trails. From tangy lemongrass to fiery chili, each dish is a testament to the country’s rich culinary heritage and the chef's masterful execution.",
+  img: "/assets/malayspice.jpg",
   user: user3
 )
 
@@ -98,4 +106,4 @@ Offer.create(
   )
 end
 
-puts "8 offers where created"
+puts "#{Offer.count} offers where created"

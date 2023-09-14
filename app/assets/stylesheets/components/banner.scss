@@ -1,14 +1,26 @@
 .banner {
   background-size: cover;
-  background-position: center;
+  background-position: 0% 55%;
   padding: 250px 0;
+}
+
+.banner-sm {
+  padding-top: 120px;
+  padding-bottom: 36px;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
+  font-weight: 600;
+    font-size: 4.8vw;
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.banner h2 {
+  color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 60px;
+  font-size: 36px;
   font-weight: bolder;
 }
 

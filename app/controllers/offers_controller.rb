@@ -1,9 +1,16 @@
 class OffersController < ApplicationController
   before_action :set_offer, only: [:show, :edit, :update]
-  def index
-    @offers = Offer.all
 
-    @markers = @offers.geocoded.map do |offer|
+  def index
+    @offers = Offer.limit(5)
+    @total_offers = Offer.count
+
+    if params[:query].present?
+      @offers = Offer.search(params[:query])
+    else
+      @offers = Offer.limit(5)
+    end
+    @markers = Offer.all.geocoded.map do |offer|
       {
         lat: offer.latitude,
         lng: offer.longitude,
@@ -11,10 +18,16 @@ class OffersController < ApplicationController
         map_marker_html: render_to_string(partial: "offers/map_marker", locals: { offer: offer })
       }
     end
-    if params[:query].present?
-      @offers = Offer.search(params[:query])
-    else
-      @offers = Offer.all
+  end
+
+  def next_offers
+    offset = params[:offset] || 0
+    @next_offers = Offer.limit(5).offset(offset)
+    offers_with_path = @next_offers.map do |offer|
+      offer.attributes.merge({ 'url' => offer_path(offer) })
+    end
+    respond_to do |format|
+      format.json { render json: offers_with_path }
     end
   end
 
