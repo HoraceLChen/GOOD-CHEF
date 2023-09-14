@@ -4,8 +4,6 @@ class Booking < ApplicationRecord
 
   before_create :set_default_status
 
-  enum :status, [:pending, :rejected, :accepted]
-
   def pending?
     status == "pending"
   end
