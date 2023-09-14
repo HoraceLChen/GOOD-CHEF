@@ -3,12 +3,13 @@ class OffersController < ApplicationController
 
   def index
     @offers = Offer.limit(5)
+    @total_offers = Offer.count
+
     if params[:query].present?
       @offers = Offer.search(params[:query])
     else
-      @offers = Offer.all
+      @offers = Offer.limit(5)
     end
-    @offers = Offer.limit(5)
     @markers = Offer.all.geocoded.map do |offer|
       {
         lat: offer.latitude,
@@ -22,8 +23,11 @@ class OffersController < ApplicationController
   def next_offers
     offset = params[:offset] || 0
     @next_offers = Offer.limit(5).offset(offset)
+    offers_with_path = @next_offers.map do |offer|
+      offer.attributes.merge({ 'url' => offer_path(offer) })
+    end
     respond_to do |format|
-      format.json { render json: @next_offers }
+      format.json { render json: offers_with_path }
     end
   end
 
