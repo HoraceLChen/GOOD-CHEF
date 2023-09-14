@@ -15,3 +15,12 @@
   top: 16px;
   left: -24px;
 }
+
+.load-more-button {
+  // position: sticky;
+  bottom: 0;
+  padding-left: 32px;
+  padding-bottom: 16px;
+  text-align: center;
+  z-index: 1000;
+}

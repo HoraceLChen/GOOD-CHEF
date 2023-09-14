@@ -1,17 +1,28 @@
-<div class="card-row" data-controller="index" data-index-target="parent" data-total-offers="<%= @total_offers %>">
-  <% @offers.each_with_index do |offer, index| %>
-    <% grid_class = "div#{index + 1}" %>
-    <div data-controller="card"
-         class="card-offer <%= grid_class %> in-line image-container align-items-end justify-content-center"
-         style="background-image: url(https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg)">
 
-      <div class="mb-2">
-        <h4 class="<%= grid_class %>card mb-0" ><%= offer.title %></h4>
-        <p id="<%= grid_class %>"class="card-subtitle"><%= offer.cuisine %> / $<%= offer.price_pp %> / <%= link_to("read more", offer_path(offer), class: "readmore") %></p>
+<!-- Parent container to hold all the card-rows -->
+<div id="parent-container" data-controller="index" data-index-target="parent">
+  <div class="card-row" data-controller="index" data-index-target="parent" data-total-offers="<%= @total_offers %>">
+    <% @offers.each_with_index do |offer, index| %>
+      <% grid_class = "div#{index + 1}" %>
+      <div data-controller="card"
+          class="card-offer <%= grid_class %> in-line image-container align-items-end justify-content-center"
+          <% if offer.img.present? %>
+            <% url = offer.img %>
+          <% else %>
+            <% url = "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg" %>
+          <% end %>
+          style="background-image: url(<%= url%>)">
+        <%= content_tag :div, '', class: 'clickable-overlay', data: { action: 'click->index#click', url: offer_path(offer) } %>
+        <div>
+          <h4 class="<%= grid_class %>card mb-0" ><%= offer.title %></h4>
+          <p id="<%= grid_class %>"class="card-subtitle"><%= offer.cuisine %> / $<%= offer.price_pp %> </p>
+        </div>
       </div>
-    </div>
-  <% end %>
-  <%= link_to "Load More", "#", data: { action: "click->index#loadMore" } %>
+    <% end %>
+  </div>
+  <div class="load-more-button mt-4">
+    <%= link_to "Load More Offers", "#", data: { action: "click->index#loadMore" }, class:'text-decoration-none text-muted' %>
+  </div>
 </div>
 
 <div class="container my-3">
