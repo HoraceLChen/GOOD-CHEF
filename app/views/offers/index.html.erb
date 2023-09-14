@@ -1,30 +1,23 @@
+<div class="page-body">
+  <div class="index-header cols-2 justify-content-between ">
+    <h2>Explore our Chefs!</h2>
 
-<!-- Parent container to hold all the card-rows -->
-<div id="parent-container" data-controller="index" data-index-target="parent">
-  <div class="card-row" data-controller="index" data-index-target="parent" data-total-offers="<%= @total_offers %>">
-    <% @offers.each_with_index do |offer, index| %>
-      <% grid_class = "div#{index + 1}" %>
-      <div data-controller="card"
-          class="card-offer <%= grid_class %> in-line image-container align-items-end justify-content-center"
-          <% if offer.img.present? %>
-            <% url = offer.img %>
-          <% else %>
-            <% url = "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg" %>
-          <% end %>
-          style="background-image: url(<%= url%>)">
-        <%= content_tag :div, '', class: 'clickable-overlay', data: { action: 'click->index#click', url: offer_path(offer) } %>
-        <div>
-          <h4 class="<%= grid_class %>card mb-0" ><%= offer.title %></h4>
-          <p id="<%= grid_class %>"class="card-subtitle"><%= offer.cuisine %> / $<%= offer.price_pp %> </p>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <div class="load-more-button mt-4">
-    <%= link_to "Load More Offers", "#", data: { action: "click->index#loadMore" }, class:'text-decoration-none text-muted' %>
   </div>
 </div>
+<div class="card-row">
+  <% @offers.each do |offer| %>
+   <div data-controller="card" data-action="mouseover->card#hover mouseout->card#unhover" class="card-offer in-line shadow image-container" style="background-image: url('<%= offer.photos.any? ? "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg" : "http://source.unsplash.com/featured/?#{offer.title}&#{rand(1000)}" %>');">
 
+      <div>
+        <h4><%= offer.title %></h4>
+        <p class="card-subtitle mb-2 "> <%= offer.cuisine %> </p>
+        <p class="card-text"> $ <%= offer.price_pp %> </p>
+        <%= link_to("read more", offer_path(offer), class: "readmore") %>
+      </div>
+    </div>
+  <% end %>
+</div>
 <div class="container my-3">
   <%= render 'offers/map', markers: @markers %>
 </div>
+<%# push again %>

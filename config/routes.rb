@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "offers#index"
 
-  get 'next_offers', to: 'offers#next_offers'
+  Rails.application.routes.draw do
+    # root to: "pages#home"
+    resources :offers, only: :index
+  end
 end

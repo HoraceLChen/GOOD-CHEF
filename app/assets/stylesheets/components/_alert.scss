@@ -1,9 +1,7 @@
 .alert {
-  position: fixed  !important;
-}
-
-.custom-alert {
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999; /* Make sure it appears above all other elements */
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 1000;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
 }
