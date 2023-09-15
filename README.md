@@ -17,6 +17,9 @@ Good Chef is a Ruby on Rails application designed to connect users with private 
 1. Clone this repository: `git clone https://github.com/yourusername/good-chef.git`
 2. Change into the directory: `cd good-chef`
 3. Install dependencies: `bundle install`
+4. Set up the database: `rails db:create db:migrate`
+5. Start the server: `rails s`
+=======
 
 ### Environment Variables
 Create a `.env` file and populate it with the following:
@@ -25,7 +28,6 @@ Create a `.env` file and populate it with the following:
 CLOUDINARY_URL=your_own_cloudinary_url_key
 MAPBOX_API_KEY=your_mapbox_api_key
 ```
-
 ## Features
 
 - **User Authentication**: Leveraging Devise for secure and robust authentication.
