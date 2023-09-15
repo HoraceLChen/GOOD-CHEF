@@ -24,6 +24,7 @@ Create a `.env` file and populate it with the following:
 ```bash
 CLOUDINARY_URL=your_own_cloudinary_url_key
 MAPBOX_API_KEY=your_mapbox_api_key
+````
 
 ## Features
 
