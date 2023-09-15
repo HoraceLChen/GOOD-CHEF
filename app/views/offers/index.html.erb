@@ -1,7 +1,7 @@
 
 <!-- Parent container to hold all the card-rows -->
-<div id="parent-container" data-controller="index" data-index-target="parent">
-  <div class="card-row" data-controller="index" data-index-target="parent" data-total-offers="<%= @total_offers %>">
+<div id="parent-container" data-controller="index" data-index-target="parent" data-total-offers="<%= @total_offers %>">
+  <div class="card-row">
     <% @offers.each_with_index do |offer, index| %>
       <% grid_class = "div#{index + 1}" %>
       <div data-controller="card"
@@ -10,7 +10,7 @@
             <% url = offer.img %>
           <% else %>
             <% if offer.photos.attached? %>
-              <% url = Cloudinary::Utils.cloudinary_url(offer.photos[0].key) %>
+              <% url = cl_image_path(offer.photos[0].key) %>
             <% else %>
               <% url = "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg" %>
             <% end %>

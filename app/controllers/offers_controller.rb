@@ -24,7 +24,8 @@ class OffersController < ApplicationController
     offset = params[:offset] || 0
     @next_offers = Offer.limit(5).offset(offset)
     offers_with_path = @next_offers.map do |offer|
-      offer.attributes.merge({ 'url' => offer_path(offer) })
+      offer.img = Cloudinary::Utils.cloudinary_url("#{Rails.env}/#{offer.photos.first.key}") if offer.photos.attached?
+      offer.attributes.merge({ url: offer_path(offer), img: offer.img })
     end
     respond_to do |format|
       format.json { render json: offers_with_path }

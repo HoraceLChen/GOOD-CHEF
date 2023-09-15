@@ -27,7 +27,12 @@ export default class extends Controller {
         data.forEach((offer, index) => {
         let newDiv = document.createElement("div");
         let classSuffix;
-        let imageUrl = offer.img ? offer.img : "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg";
+        let imageUrl;
+        if (offer.img) {
+          imageUrl = offer.img;
+        } else {
+          imageUrl = "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg";
+        }
 
         if (this.flipLayout) {
           classSuffix = index % 5 + 6;  // use 6-10
