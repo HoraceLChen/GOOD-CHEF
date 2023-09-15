@@ -1,7 +1,5 @@
 # Good Chef
 
-## Overview
-
 Good Chef is a Ruby on Rails application designed to connect users with private chefs for unique culinary experiences. Developed as a collaborative project by a team of four, it incorporates robust features such as user authentication, image uploads, and geolocation mapping.
 
 ## Table of Contents
@@ -21,7 +19,15 @@ Good Chef is a Ruby on Rails application designed to connect users with private 
 3. Install dependencies: `bundle install`
 4. Set up the database: `rails db:create db:migrate`
 5. Start the server: `rails s`
+=======
 
+### Environment Variables
+Create a `.env` file and populate it with the following:
+
+```bash
+CLOUDINARY_URL=your_own_cloudinary_url_key
+MAPBOX_API_KEY=your_mapbox_api_key
+```
 ## Features
 
 - **User Authentication**: Leveraging Devise for secure and robust authentication.
