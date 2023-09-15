@@ -9,7 +9,11 @@
           <% if offer.img.present? %>
             <% url = offer.img %>
           <% else %>
-            <% url = "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg" %>
+            <% if offer.photos.attached? %>
+              <% url = Cloudinary::Utils.cloudinary_url(offer.photos[0].key) %>
+            <% else %>
+              <% url = "https://images.squarespace-cdn.com/content/59488c7dbf629aaeded8b9b1/1556478492296-CRA46VU26F25E2PSG092/yoshi_April2019_1.jpg" %>
+            <% end %>
           <% end %>
           style="background-image: url(<%= url%>)">
         <%= content_tag :div, '', class: 'clickable-overlay', data: { action: 'click->index#click', url: offer_path(offer) } %>
